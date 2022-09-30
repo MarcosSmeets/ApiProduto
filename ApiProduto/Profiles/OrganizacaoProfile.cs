@@ -10,6 +10,7 @@ namespace ApiProduto.Profiles
         {
             CreateMap<CreateOrganizacaoDto, OrganizacaoProduto>();
             CreateMap<OrganizacaoProduto, ReadOrganizacaoDto>();
+            CreateMap<UpdateOrganizacaoDto, OrganizacaoProduto>();
         }
     }
 }

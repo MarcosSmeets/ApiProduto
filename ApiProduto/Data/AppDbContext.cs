@@ -7,17 +7,16 @@ namespace ApiProduto.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            builder.Entity<Produto>()
-                .HasOne(produto => produto.Status)
-                .WithMany(status => status.Produtos)
-                .HasForeignKey(produto => produto.IdStatus);
-
-            builder.Entity<Produto>()
-                .HasOne(produto => produto.Organizacao)
-                .WithMany(organizacao => organizacao.Produtos)
-                .HasForeignKey(produto => produto.IdOrganizacao);
+            modelBuilder.Entity<Produto>()
+                .HasOne(p => p.Organizacao)
+                .WithMany(o => o.Produtos)
+                .HasForeignKey(p => p.IdOrganizacao);
+            modelBuilder.Entity<Produto>()
+                .HasOne(p => p.Status)
+                .WithMany(s => s.Produtos)
+                .HasForeignKey(p => p.IdStatus);
         }
 
         public DbSet<Produto> Produtos { get; set; }
