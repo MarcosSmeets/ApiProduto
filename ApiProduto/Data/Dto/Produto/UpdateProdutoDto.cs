@@ -9,7 +9,7 @@ namespace ApiProduto.Data.Dto
         [Required]
         public string Disc { get; set; }
         [Required]
-        public int precoreco { get; set; }
+        public int preco { get; set; }
         [Required]
         public string img { get; set; }
     }

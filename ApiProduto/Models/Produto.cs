@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ApiProduto.Models
 {
@@ -15,5 +16,13 @@ namespace ApiProduto.Models
         public int preco { get; set; }
         [Required]
         public string img { get; set; }
+        [JsonIgnore]
+        public virtual StatusProduto Status { get; set; }
+        [JsonIgnore]
+        public int IdStatus { get; set; }
+        [JsonIgnore]
+        public virtual OrganizacaoProduto Organizacao { get; set; }
+        [JsonIgnore]
+        public int IdOrganizacao { get; set; }
     }
 }

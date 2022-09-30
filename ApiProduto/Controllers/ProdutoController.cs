@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiProduto.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("V1/[controller]")]
     public class ProdutoController : ControllerBase
     {
         private ProdutoService _produtoService;

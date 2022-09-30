@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ApiProduto.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApiProduto.Data.Dto
 {
-    public class CreateProdutoDto
+    public class ReadProdutoDto
     {
+        [Required]
+        public int Id { get; set; }
         [Required]
         public string Titulo { get; set; }
         [Required]
@@ -12,5 +15,7 @@ namespace ApiProduto.Data.Dto
         public int preco { get; set; }
         [Required]
         public string img { get; set; }
+        public StatusProduto Status { get; set; }
+        public OrganizacaoProduto Organizacao { get; set; }
     }
 }
