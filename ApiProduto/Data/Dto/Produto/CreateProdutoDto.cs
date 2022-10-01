@@ -12,7 +12,7 @@ namespace ApiProduto.Data.Dto
         public int preco { get; set; }
         [Required]
         public string img { get; set; }
-        public int StatusId { get; set; }
-        public int OrganizacaoId { get; set; }
+        public int IdStatus { get; set; }
+        public int IdOrganizacao { get; set; }
     }
 }

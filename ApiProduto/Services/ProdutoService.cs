@@ -54,7 +54,7 @@ namespace ApiProduto.Services
             if (produto == null)
                 return Result.Fail("Not Found");
 
-            _mapper.Map(dto, id);
+            _mapper.Map(dto, produto);
             _context.SaveChanges();
             return Result.Ok();
         }

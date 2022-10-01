@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiProduto.Controllers
 {
     [ApiController]
-    [Route("V1/[controller]")]
+    [Route("v1/[controller]")]
     public class StatusController : ControllerBase
     {
         private StatusService _statusService;

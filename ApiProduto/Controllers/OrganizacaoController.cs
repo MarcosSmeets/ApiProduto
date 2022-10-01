@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiProduto.Controllers
 {
     [ApiController]
-    [Route("V1/[Controller]")]
+    [Route("v1/[Controller]")]
     public class OrganizacaoController : ControllerBase
     {
         private OrganizacaoService _organizacaoService;
@@ -21,7 +21,7 @@ namespace ApiProduto.Controllers
         {
             ReadOrganizacaoDto readDto = _organizacaoService.PostOrganizacao(dto);
 
-            return CreatedAtAction(nameof(GetProdutoById), new { Id = readDto.Id }, readDto);
+            return CreatedAtAction(nameof(GetOrganizacaoById), new { Id = readDto.Id }, readDto);
         }
 
         [HttpGet]
@@ -34,12 +34,21 @@ namespace ApiProduto.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetProdutoById(int id)
+        public IActionResult GetOrganizacaoById(int id)
         {
             ReadOrganizacaoDto readDto = _organizacaoService.GetOrganizcaoById(id);
             if (readDto != null)
                 return Ok(readDto);
             return BadRequest();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult PutOrganizacao(int id, [FromBody] UpdateOrganizacaoDto dto)
+        {
+            Result result = _organizacaoService.PutOrganizacao(id, dto);
+            if (result.IsFailed)
+                return NotFound();
+            return NoContent();
         }
 
         [HttpDelete("{id}")]

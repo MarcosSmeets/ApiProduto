@@ -9,7 +9,7 @@ namespace ApiProduto.Profiles
         public StatusProfile()
         {
             CreateMap<CreateStatusDto, StatusProduto>();
-            CreateMap<StatusProduto, ReadStatusDto>();         
+            CreateMap<StatusProduto, ReadStatusDto>();
         }
     }
 }

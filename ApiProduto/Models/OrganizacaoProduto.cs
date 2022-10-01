@@ -9,7 +9,6 @@ namespace ApiProduto.Models
         [Required]
         public int Id { get; set; }
         public string Categoria { get; set; }
-        [JsonIgnore]
         public virtual List<Produto> Produtos { get; set; }
     }
 }

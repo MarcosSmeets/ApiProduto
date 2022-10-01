@@ -47,6 +47,17 @@ namespace ApiProduto.Services
             return null;
         }
 
+        public Result PutOrganizacao(int id, UpdateOrganizacaoDto dto)
+        {
+            OrganizacaoProduto organizacao = _context.Organizacaos.FirstOrDefault(organizacao => organizacao.Id == id);
+            if (organizacao == null)
+                return Result.Fail("Not Found");
+
+            _mapper.Map(dto, organizacao);
+            _context.SaveChanges();
+            return Result.Ok();
+        }
+
         public Result DeleteOrganizacao(int id)
         {
             OrganizacaoProduto organizacao = _context.Organizacaos.FirstOrDefault(organizacao => organizacao.Id == id);
