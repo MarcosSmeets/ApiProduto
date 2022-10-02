@@ -8,9 +8,9 @@ namespace ApiProduto.Profiles
     {
         public OrganizacaoProfile()
         {
-            CreateMap<CreateOrganizacaoDto, OrganizacaoProduto>();
-            CreateMap<OrganizacaoProduto, ReadOrganizacaoDto>();
-            CreateMap<UpdateOrganizacaoDto, OrganizacaoProduto>();
+            CreateMap<CreateCategoriaDto, CategoriaProduto>();
+            CreateMap<CategoriaProduto, ReadCategoriaDto>();
+            CreateMap<UpdateCategoriaDto, CategoriaProduto>();
         }
     }
 }

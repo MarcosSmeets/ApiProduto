@@ -20,7 +20,7 @@ namespace ApiProduto.Data
         }
 
         public DbSet<Produto> Produtos { get; set; }
-        public DbSet<OrganizacaoProduto> Organizacaos { get; set; }
+        public DbSet<CategoriaProduto> Categorias { get; set; }
         public DbSet<StatusProduto> Status { get; set; }
     }
 }

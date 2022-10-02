@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(opts => opts.UseLazyLoadingProxies().UseMySql(builder.Configuration.GetConnectionString("DbConnection"), new MySqlServerVersion(new Version(8, 0))));
 builder.Services.AddScoped<ProdutoService, ProdutoService>();
 builder.Services.AddScoped<StatusService, StatusService>();
-builder.Services.AddScoped<OrganizacaoService, OrganizacaoService>();
+builder.Services.AddScoped<CategoriaService, CategoriaService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

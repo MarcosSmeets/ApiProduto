@@ -66,13 +66,13 @@ namespace ApiProduto.Migrations
                         column: x => x.IdOrganizacao,
                         principalTable: "Organizacaos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Produtos_Status_IdStatus",
                         column: x => x.IdStatus,
                         principalTable: "Status",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 

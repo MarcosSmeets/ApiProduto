@@ -7,45 +7,45 @@ namespace ApiProduto.Controllers
 {
     [ApiController]
     [Route("v1/[Controller]")]
-    public class OrganizacaoController : ControllerBase
+    public class CategoriaController : ControllerBase
     {
-        private OrganizacaoService _organizacaoService;
+        private CategoriaService _organizacaoService;
 
-        public OrganizacaoController(OrganizacaoService organizacaoService)
+        public CategoriaController(CategoriaService organizacaoService)
         {
             _organizacaoService = organizacaoService;
         }
 
         [HttpPost]
-        public IActionResult PostOrganizacao([FromBody] CreateOrganizacaoDto dto)
+        public IActionResult PostOrganizacao([FromBody] CreateCategoriaDto dto)
         {
-            ReadOrganizacaoDto readDto = _organizacaoService.PostOrganizacao(dto);
+            ReadCategoriaDto readDto = _organizacaoService.PostCategoria(dto);
 
-            return CreatedAtAction(nameof(GetOrganizacaoById), new { Id = readDto.Id }, readDto);
+            return CreatedAtAction(nameof(GetCategoriaById), new { Id = readDto.Id }, readDto);
         }
 
         [HttpGet]
         public IActionResult GetOrganizcao()
         {
-            List<ReadOrganizacaoDto> readDto = _organizacaoService.GetProduto();
+            List<ReadCategoriaDto> readDto = _organizacaoService.GetCategoria();
             if (readDto != null)
                 return Ok(readDto);
             return BadRequest();
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetOrganizacaoById(int id)
+        public IActionResult GetCategoriaById(int id)
         {
-            ReadOrganizacaoDto readDto = _organizacaoService.GetOrganizcaoById(id);
+            ReadCategoriaDto readDto = _organizacaoService.GetCategoriaById(id);
             if (readDto != null)
                 return Ok(readDto);
             return BadRequest();
         }
 
         [HttpPut("{id}")]
-        public IActionResult PutOrganizacao(int id, [FromBody] UpdateOrganizacaoDto dto)
+        public IActionResult PutOrganizacao(int id, [FromBody] UpdateCategoriaDto dto)
         {
-            Result result = _organizacaoService.PutOrganizacao(id, dto);
+            Result result = _organizacaoService.PutCategoria(id, dto);
             if (result.IsFailed)
                 return NotFound();
             return NoContent();
@@ -54,7 +54,7 @@ namespace ApiProduto.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteOrganizacao(int id)
         {
-            Result result = _organizacaoService.DeleteOrganizacao(id);
+            Result result = _organizacaoService.DeleteCategoria(id);
             if (result.IsFailed)
                 return NotFound();
             return NoContent();

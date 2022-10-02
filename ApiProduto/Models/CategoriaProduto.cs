@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace ApiProduto.Models
 {
-    public class OrganizacaoProduto
+    public class CategoriaProduto
     {
         [Key]
         [Required]

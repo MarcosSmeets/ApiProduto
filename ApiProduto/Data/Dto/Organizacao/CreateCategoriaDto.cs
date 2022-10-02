@@ -1,6 +1,6 @@
 ﻿namespace ApiProduto.Data.Dto.Organizacao
 {
-    public class UpdateOrganizacaoDto
+    public class CreateCategoriaDto
     {
         public string Categoria { get; set; }
     }

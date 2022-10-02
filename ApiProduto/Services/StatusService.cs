@@ -48,6 +48,17 @@ namespace ApiProduto.Services
             return null;
         }
 
+        public Result PutStatus(int id, UpdateStatusDto dto)
+        {
+            StatusProduto status = _context.Status.FirstOrDefault(status => status.Id == id);
+            if (status == null)
+                return Result.Fail("Not Found");
+
+            _mapper.Map(dto, status);
+            _context.SaveChanges();
+            return Result.Ok();
+        }
+
         public Result DeleteProduto(int id)
         {
             StatusProduto status = _context.Status.FirstOrDefault(status => status.Id == id);

@@ -42,6 +42,15 @@ namespace ApiProduto.Controllers
             return BadRequest();
         }
 
+        [HttpPut("{id}")]
+        public IActionResult PutStatus(int id, [FromBody] UpdateStatusDto dto)
+        {
+            Result result = _statusService.PutStatus(id, dto);
+            if (result.IsFailed)
+                return NotFound();
+            return NoContent();
+        }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteStatus(int id)
         {

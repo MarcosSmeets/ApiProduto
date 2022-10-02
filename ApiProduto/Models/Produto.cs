@@ -21,7 +21,7 @@ namespace ApiProduto.Models
         [JsonIgnore]
         public int IdStatus { get; set; }
         [JsonIgnore]
-        public virtual OrganizacaoProduto Organizacao { get; set; }
+        public virtual CategoriaProduto Organizacao { get; set; }
         [JsonIgnore]
         public int IdOrganizacao { get; set; }
     }

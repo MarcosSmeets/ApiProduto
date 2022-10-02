@@ -17,6 +17,6 @@ namespace ApiProduto.Data.Dto
         [Required]
         public string img { get; set; }
         public StatusProduto Status { get; set; }
-        public OrganizacaoProduto Organizacao { get; set; }
+        public CategoriaProduto Organizacao { get; set; }
     }
 }
