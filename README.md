@@ -1,6 +1,6 @@
-# Nome do meu projeto
+# Produtos Api
 
-Rápida descrição do objetivo de fazer esse projeto
+Projeto pessoa para testar meus novos conhecimentos
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
