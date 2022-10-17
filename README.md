@@ -4,5 +4,5 @@ Projeto pessoa para testar meus novos conhecimentos
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
-| :sparkles: Nome        | **Titulo do meu projeto**
+| :sparkles: Nome        | **Api E-Commerce**
 | :label: Tecnologias |  c#, asp.net, mysql (tecnologias utilizadas)
